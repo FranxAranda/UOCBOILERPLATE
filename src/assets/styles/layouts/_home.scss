@@ -1,57 +1,199 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$transparent-border-color: rgba(255, 255, 255, 0.8); // Color del borde transparente
+
+// Mixins
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global styles
 * {
   box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  font-family: Arial, sans-serif;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+// Header
+.header {
+  background-color: $primary-color;
+  color: white;
+  padding: 20px;
+  justify-content: center;
+}
+
+.header__title {
+  margin: 0;
+}
+
+.header__nav ul {
+  list-style-type: none;
+  padding: 0;
+
+  .nav__item {
+    display: inline-block;
+    margin-right: 10px;
+
+    .nav__link {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Sections
+section {
+  padding: 50px 20px;
+
+  &.ciudad {
+    background-color: #f8f9fa;
+  }
+
+  &.lugares {
+    background-color: #e9ecef;
+
+    .lugares__item {
+      position: relative;
+      margin-bottom: 20px;
+
+      .lugares__descripción {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Sombra difuminada
+        z-index: 1;
+      }
+
+      &:hover {
+        .lugares__descripción {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.datos {
+    background-color: rgba(255, 255, 255, 0.8); // Fondo blanco transparente
+    border-radius: 10px; // Bordes redondeados
+    max-width: 800px; // Ancho máximo
+    margin: 0 auto; // Centrado horizontal
+    padding: 20px; // Espaciado interno
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); // Sombra difuminada
+
+    .datos__info {
+      font-weight: bold;
+    }
+
+    .datos__list {
+      list-style-type: none;
+      padding: 0;
+
+      .datos__item {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: $secondary-color;
+  color: white;
+  padding: 20px;
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  a {
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
+.ciudad__image,
+.lugares__image {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+.container {
+  display: flex;
+}
+
+.image-container {
+  flex: 1; 
+}
+
+.divider {
+  width: 1px; 
+  background-color: black; 
+  margin: 0 10px;
+}
+
+.lugares__list,
+.datos__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lugares__item,
+.datos__item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.lugares__descripción {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.lugares__image-container {
+  text-align: center;
+}
+
+.lugares__image {
+  max-width: 50%; /* Tamaño máximo de la imagen al 50% del contenedor */
   height: auto;
-
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
-  }
+  border-radius: 10px; /* Esquinas redondeadas */
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
-}
-
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
+/* Estilos para texto centrado y justificado */
+.text-center,
+.text-justify {
   text-align: center;
+}
+
+/* Estilos para la lista */
+.list,
+.list-item {
+  text-align: left;
 }

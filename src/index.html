@@ -1,27 +1,93 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-bh4SREBXKvGXDz5r6WmYvOwLrZVQajrLF5MvHh0iG/j9C8WmV6dj7aG5l1sf9u9V" crossorigin="anonymous">
+    <title>Seúl</title>
   </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
+  
+<body>
+  <div class="icono-web">
+    <i class="fas fa-compass"></i>
     </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+  <header class="header">
+    <h1 class="header__title">Seúl</h1>
+    <nav class="header__nav">
+      <ul class="nav">
+        <li class="nav__item"><a href="#ciudad" class="nav__link">Ciudad</a></li>
+        <li class="nav__item"><a href="#lugares" class="nav__link">Lugares</a></li>
+        <li class="nav__item"><a href="#datos" class="nav__link">Datos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="ciudad" class="ciudad">
+    <div class="ciudad__content">
+      <h2 class="ciudad__title">Seúl</h2>
+      <p class="ciudad__description">Seúl, la hermosa capital de Corea del Sur, es referencia de modernidad y avances tecnológicos; sin embargo, no deja de lado su historia y sus palacios emblemáticos.</p>
+      <p class="ciudad__texto">Seúl, la bulliciosa capital de Corea del Sur, combina su rica historia con la modernidad. Además de ser el centro de la moda, la tecnología y los rascacielos, la ciudad más importante de este país también preserva su patrimonio en templos y palacios, mercados tradicionales y museos. La escena culinaria también va desde puestos callejeros con delicias locales hasta restaurantes de alta cocina.</p>
+      <div class="container">
+        <div class="image-container">
+          <img src="assets/images/SEOUL1.webp" alt="Seúl 1" class="ciudad__image">
+        </div>
+        <div class="divider"></div>
+        <div class="image-container">
+          <img src="assets/images/SEOUL2.webp" alt="Seúl 2" class="ciudad__image">
+        </div>
+      </div>      
+    </div>
+  </section>
+  
+  <section id="lugares" class="lugares">
+    <div class="lugares__content">
+      <h2 class="lugares__title">Lugares de interés en Seúl</h2>
+      <ul class="lugares__list">
+        <li class="lugares__item">
+          Palacio Gyeongbokgung
+          <p class="lugares__descripción">El Palacio Gyeongbokgung es un majestuoso complejo real construido en 1395 durante la dinastía Joseon. Es un símbolo histórico que ha sido restaurado en varias ocasiones. El palacio cuenta con impresionantes puertas, pabellones y jardines. Este sitio cultural representa la arquitectura tradicional coreana y es un lugar imperdible, donde los visitantes pueden explorar la rica historia y disfrutar de eventos ceremoniales.</p>
+          <div class="lugares__image-container">
+            <img src="assets/images/GYEONPALACE_SMALL.webp" alt="Palacio Gyeongbokgung" class="lugares__image">
+          </div>
+        </li>
+        <li class="lugares__item">
+          Villa Bukchon Hanok
+          <p class="lugares__descripción">Bukchon Hanok Village es un enclave encantador de la ciudad que conserva la arquitectura tradicional coreana, conocida como hanok. Sus callejones empedrados albergan casas bien preservadas, permitiendo a los visitantes sumergirse en la vida de la dinastía Joseon. Este pueblo histórico ofrece una visión auténtica de la cultura coreana, con museos, tiendas de artesanías y la oportunidad de explorar casas restauradas.</p>
+          <div class="lugares__image-container">
+            <img src="assets/images/HANOK_SMALL.webp" alt="Villa Bukchon Hanok" class="lugares__image">
+          </div>
+        </li>
+        <li class="lugares__item">
+          Lotte World Tower
+          <p class="lugares__descripción">Este imponente rascacielos es uno de los edificios más altos del mundo. Con 123 pisos, alberga oficinas, residencias y el lujoso hotel Signiel Seoul. La torre ofrece vistas panorámicas de la ciudad desde su mirador Sky Deck, por lo que es una muy buena forma de observar todo Seúl. Además, Lotte World Tower forma complejo comercial y de entretenimiento, incluyendo el parque temático Lotte World Adventure y el Lotte World Aquarium.</p>
+          <div class="lugares__image-container">
+            <img src="assets/images/LOTTE_SMALL.webp" alt="Lotte World Tower" class="lugares__image">
+          </div>
+        </li>
+      </ul>      
+    </div>
+  </section>  
+  <section id="datos" class="datos">
+    <div class="datos__content">
+      <h2 class="datos__title">Información básica sobre Seul</h2>
+      <p class="datos__info">Datos:</p>
+      <ul class="datos__list">
+        <li class="datos__item">Población: 10.5 millones.</li>
+        <li class="datos__item"> Distritos: 25. </li>
+        <li class="datos__item"> Clima: Subtropical y húmedo. </li>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copyright">© 2024 Francesc Aranda Sierra
+    </p>
+    <p>
+       <a href="https://es.wikivoyage.org/wiki/Se%C3%BAl#:~:text=Se%C3%BAl%20(서울)%20es%20la%20capital,y%20culturales%20de%20Asia%20oriental." target="_blank">Seúl en Wikivoyage</a>
+    </p>
+    <p> 
+      <a href="https://www.ngenespanol.com/traveler/que-hacer-en-seul-la-tradicional-y-frenetica-capital-de-corea-del-sur/" target="_blank">Qué hacer en Seúl: la tradicional y frenética capital de Corea del Sur</a>
+    </p>
+  </footer>
+</body>
 </html>
